@@ -1,0 +1,28 @@
+<ion-header-bar class="bar-dark" id="header">
+  <button class="button button-light icon-left ion-chevron-left" ng-click="home();">Back</button>
+  <h1 class="title">Recipe</h1>
+</ion-header-bar>
+
+<ion-content>
+  <div id="recipe">
+
+    <h2 id="drinkTitle">{{drink.name}}</h2>
+    <p>Time To Make: <span class="bold">{{drink.time}} Minutes</span></p>
+    <div class="ingredients list card">
+      <ion-item class="item item-divider">Ingrdients</ion-item>
+        <ion-checkbox ng-repeat="ingredient in ingredients" id="ingredientList">
+          <p>{{ingredient}}</p>
+        </ion-checkbox>
+      </ion-item>
+  </div>
+    <div class="card">
+      <ion-item class="item item-divider">Directions</ion-item>
+      <p class="item item-text-wrap">{{drink.directions}}</p>
+    </div>
+  </div>
+
+  <div class="photo">
+    <img ng-src="img/{{drink.photos[0].file}}" alt="">
+    <!-- <p>{{drink.photos[0].file}}</p> -->
+  </div>
+</ion-content>
